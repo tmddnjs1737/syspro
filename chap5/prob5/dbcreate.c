@@ -2,14 +2,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
-#define MAX 24
-#define START_ID 1001001
+#include "student.h"
 
-struct student {
-   char name[MAX];
-   int id;
-   int score;
-};
 
 
 int main(int argc, char *argv[]) {
