@@ -10,7 +10,7 @@ extern char **environ;
 
 int main(int argc, char *argv[]) {
     int opt;
-    
+   
     while ((opt = getopt(argc, argv, "e::ugip")) != -1) {
         switch (opt) {
             case 'e':
@@ -19,14 +19,14 @@ int main(int argc, char *argv[]) {
                     if (val != NULL) {
                         printf("%s = %s\n", optarg, val);
                     }
-                } 
+                }
                 else if (optind < argc && argv[optind][0] != '-') {
                     char *val = getenv(argv[optind]);
                     if (val != NULL) {
                         printf("%s = %s\n", argv[optind], val);
                     }
                     optind++;
-                } 
+                }
                 else {
                     for (char **env = environ; *env != NULL; env++) {
                         printf("%s\n", *env);
